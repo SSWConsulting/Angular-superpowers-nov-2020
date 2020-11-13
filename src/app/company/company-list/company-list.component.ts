@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Company } from '../company';
+import { CompanyService } from '../company.service';
 
 @Component({
   selector: 'app-company-list',
@@ -8,20 +9,16 @@ import { Company } from '../company';
 })
 export class CompanyListComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+   private svc: CompanyService
+  ) { }
 
   companies: Company[];
 
   ngOnInit(): void {
-    this.getCompanies();
+    this.companies = this.svc.getCompanies();
   }
 
-  getCompanies(): void {
-    this.companies = [
-      {name: 'Company A', phone: 1234, email: 'CompanyA@ssw.com.au'},
-      {name: 'Company B', phone: 1234, email: 'CompanyB@ssw.com.au'},
-      {name: 'Company C', phone: 1234, email: 'CompanyC@ssw.com.au'},
-    ];
-  }
+
 
 }
