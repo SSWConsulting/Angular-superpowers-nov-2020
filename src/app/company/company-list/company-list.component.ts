@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { isThisTypeNode } from 'typescript';
 import { Company } from '../company';
 import { CompanyService } from '../company.service';
 
@@ -16,7 +17,12 @@ export class CompanyListComponent implements OnInit {
   companies: Company[];
 
   ngOnInit(): void {
-    this.companies = this.svc.getCompanies();
+    const component = this;
+    this.svc.getCompanies().subscribe(
+      next => this.companies = next,
+      error => console.error(error),
+      () => console.log('Complete')
+    );
   }
 
 
