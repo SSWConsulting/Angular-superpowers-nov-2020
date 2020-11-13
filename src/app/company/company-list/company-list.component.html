@@ -1,12 +1,12 @@
 <h1>
   My Companies
 </h1>
-<div class="container">
-  <button type="button" class="btn btn-success">Add Company</button>
+
+  <button type="button" class="btn btn-success" [routerLink]="['/company', 'new']">Add Company</button>
 
   <app-company-table [companies]="companies$ | async" (deleteClicked)="deleteCompany($event)"></app-company-table>
 
-</div>
+
 
 
 

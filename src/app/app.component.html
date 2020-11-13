@@ -1,4 +1,16 @@
 
-<h1>Welcome To {{title}}</h1>
+<nav class="navbar navbar-light bg-faded">
+  <a class="navbar-brand">FireBootCamp CRM</a>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item" [routerLinkActive]="'active'">
+      <a class="nav-link" [routerLink]="['/company/list']">Companies</a>
+    </li>
+  </ul>
+</nav>
 
-<app-company-list></app-company-list>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+
+
