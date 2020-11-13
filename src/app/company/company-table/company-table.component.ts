@@ -1,10 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Company } from '../company';
 
 @Component({
   selector: 'app-company-table',
   templateUrl: './company-table.component.html',
-  styleUrls: ['./company-table.component.scss']
+  styleUrls: ['./company-table.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CompanyTableComponent implements OnInit {
 

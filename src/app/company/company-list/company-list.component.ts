@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { isThisTypeNode } from 'typescript';
 import { Company } from '../company';
@@ -7,7 +7,8 @@ import { CompanyService } from '../company.service';
 @Component({
   selector: 'app-company-list',
   templateUrl: './company-list.component.html',
-  styleUrls: ['./company-list.component.scss']
+  styleUrls: ['./company-list.component.scss'],
+
 })
 export class CompanyListComponent implements OnInit {
 
@@ -32,4 +33,5 @@ export class CompanyListComponent implements OnInit {
   loadCompanies(): void {
     this.companies$ = this.svc.getCompanies();
   }
+
 }
