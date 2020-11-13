@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 import { isThisTypeNode } from 'typescript';
 import { Company } from '../company';
 import { CompanyService } from '../company.service';
@@ -14,17 +15,13 @@ export class CompanyListComponent implements OnInit {
    private svc: CompanyService
   ) { }
 
-  companies: Company[];
+  companies$: Observable<Company[]>;
+
 
   ngOnInit(): void {
     const component = this;
-    this.svc.getCompanies().subscribe(
-      next => this.companies = next,
-      error => console.error(error),
-      () => console.log('Complete')
-    );
+    this.companies$ = this.svc.getCompanies();
   }
-
 
 
 }
