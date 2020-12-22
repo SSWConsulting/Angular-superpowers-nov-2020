@@ -1,3 +1,7 @@
+# Archived
+This project is demo/edicational code persented at SSW's FireBootCamp Training course. It is not actively maintained.
+
+
 # Crm
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.1.
